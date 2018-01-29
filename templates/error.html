@@ -1,0 +1,12 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="error">
+  <h4><strong>Sorry!</strong></h4>
+  <div class="error_message">
+    <p>We couldn't find your page</p><br>
+    <p>But we're working on it</p><br>
+    <p><a href="{{ url_for('home') }}" method="POST">Go back to the home page</a></p>
+  </div>
+  <img id="bear_pic" src="https://metrouk2.files.wordpress.com/2013/12/polar-bear.jpg" alt="Funny bear pic">
+</div>
+{%endblock%}

@@ -1,0 +1,62 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="searched">
+  <div class="container">
+    <div class="row searched">
+      {% if avatar != None %}
+        <div class="col-md-6"><img class="searched_pic" src= {{avatar | safe}} alt="Headshot"></div>
+      {% else %}
+        <div class="col-md-6"><img class="searched_pic" src="https://cdn.dribbble.com/users/55871/screenshots/2158022/no_photo_1x.jpg" alt="Headshot"></div>
+      {% endif %}
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12 test" id="name">{{ fullName | safe}}</div>
+        </div>
+        <div class="row">
+          {% if bio != None %}
+            <div class="col-md-12 test">{{ bio | safe }}</div>
+          {% endif %}
+        </div>
+        <div class="row">
+          <div class="col-md-12 test" id="hometown"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ hometown | safe }}</div>
+        </div>
+        <div class="row">
+          {% if site != None %}
+            <div class="col-xs-1 test links">
+              <a href= {{ site | safe  }}>
+                <i id="social-rss" class="fa fa-rss-square fa-2x social"></i>
+              </a>
+            </div>
+          {% endif %}
+          {% if twitter != "" %}
+            <div class="col-xs-1 test links">
+              <a href= {{ twitter | safe  }}>
+                <i id="social-tw" class="fa fa-twitter-square fa-2x social"></i>
+              </a>
+            </div>
+          {% endif %}
+          {% if linkedin != "" %}
+            <div class="col-xs-1 test links">
+              <a href= {{ linkedin | safe  }}>
+                <i id="social-li" class="fa fa-linkedin-square fa-2x social"></i>
+              </a>
+            </div>
+          {% endif %}
+          {% if facebook != "" %}
+            <div class="col-xs-1 test links">
+              <a href= {{ facebook | safe  }}>
+                <i id="social-fb" class="fa fa-facebook-square fa-2x social"></i>
+              </a>
+            </div>
+          {% endif %}
+          <div class="col-xs-1 test links">
+            <a href= {{ searched | safe  }}>
+              <i id="social-em" class="fa fa-envelope-square fa-2x social"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

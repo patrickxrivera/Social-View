@@ -1,0 +1,66 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="history">
+  <div class="container">
+    <h4>Past Search Results</h4>
+    {% for row in database %}
+      <div class="row history">
+        {% if row.avatar_ != None %}
+          <div class="col-md-4"><img id="avatar" class="searched_pic" src= {{row.avatar_ | safe}} alt="Headshot"></div>
+        {% else %}
+          <div class="col-md-4"><img id="avatar" class="searched_pic" src="https://cdn.dribbble.com/users/55871/screenshots/2158022/no_photo_1x.jpg" alt="Headshot"></div>
+        {% endif %}
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 test" id="name">{{ row.fullName_ | safe}}</div>
+          </div>
+          <div class="row">
+            {% if row.bio_ != None %}
+              <div class="col-md-12 test">{{ row.bio_ | safe }}</div>
+            {% endif %}
+          </div>
+          <div class="row">
+            <div class="col-md-12 test" id="hometown"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ " " ~ row.city_ ~ ", " ~ row.state_ | safe }}</div>
+          </div>
+          <div class="row">
+            {% if row.site_ != None %}
+              <div class="col-xs-1 test links">
+                <a href= {{ row.site_ | safe  }}>
+                  <i id="social-rss" class="fa fa-rss-square fa-2x social"></i>
+                </a>
+              </div>
+            {% endif %}
+            {% if row.twitter_ != "" %}
+              <div class="col-xs-1 test links">
+                <a href= {{ row.twitter_ | safe  }}>
+                  <i id="social-tw" class="fa fa-twitter-square fa-2x social"></i>
+                </a>
+              </div>
+            {% endif %}
+            {% if row.linkedin_ != "" %}
+              <div class="col-xs-1 test links">
+                <a href= {{ row.linkedin_ | safe  }}>
+                  <i id="social-li" class="fa fa-linkedin-square fa-2x social"></i>
+                </a>
+              </div>
+            {% endif %}
+            {% if row.facebook_ != "" %}
+              <div class="col-xs-1 test links">
+                <a href= {{ row.facebook_ | safe  }}>
+                  <i id="social-fb" class="fa fa-facebook-square fa-2x social"></i>
+                </a>
+              </div>
+            {% endif %}
+            <div class="col-xs-1 test links">
+              <a href= {{ row.email_ | safe  }}>
+                <i id="social-em" class="fa fa-envelope-square fa-2x social"></i>
+              </a>
+            </div>
+            <span id="bottomLine"></span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{%endblock%}

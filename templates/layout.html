@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Social View</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://use.fontawesome.com/53252d74f2.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
+      <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+  </head>
+  <body id="#bootstap-overrides">
+    <header>
+      <div class="container">
+        <h1 class="logo">Social View</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('history') }}">History</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+        {%block content%}
+        {%endblock%}
+    </div>
+  </body>
+</html>

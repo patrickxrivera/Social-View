@@ -1,0 +1,11 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="home form">
+  <h4>Find out more about your email contacts</h4>
+  <form action="{{ url_for('searched') }}" method="POST">
+    <input type="email" placeholder="Enter an email address" title="Your email is safe with us :-)" name="searched_value">
+    <input type="submit">
+  </form>
+  </div>
+</div>
+{%endblock%}

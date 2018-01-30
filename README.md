@@ -1,7 +1,7 @@
 # SocialView
 **A tool for finding social media profiles associated with email addresses**
 
-![App-Gif](https://s3.us-east-2.amazonaws.com/fcc-wiki-view/wiki-view.gif)
+![App-Gif](https://s3.us-east-2.amazonaws.com/social-view/social-view-v2.gif)
 
 ## Purpose
 
